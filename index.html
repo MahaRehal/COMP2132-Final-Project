@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COMP 2132 Project Dice Game</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 id="heading">Dice Game</h1>
+        </header>
+        <main>     
+            <div id="instructions">
+                <p>To hide/show the instructions and rules click <b><span id="rules">here</span></b></p>
+                <div id="hiddenRules">
+                    <p>Instructions: <br>
+                        <li>The game goes on for 3 rounds, after which your total score will be counted <br></li> 
+                        <li>To start game click the <b>New Game</b> button <br></li>
+                        <li>Click <b>Roll Dice</b> to start a new round <br></li>
+                        <li>Click <b>End Game</b> button to view the total score <br></li>
+                        <li>After the score summary, you can restart game by clicking the <b>New Game</b> button <br></li>
+                    </p>
+                    <p>Rules:
+                        <li>If any of the two dice comes up as a 1 then the score for that round is 0.</li>
+                        <li>If both dice are the same number, the score is the total of the two dice times 2. </li>
+                        <li>Otherwise the round score is the sum of both dice</li>
+                    </p>
+                </div>
+            </div>       
+            <div id="gameBackground">
+                <div id="gameInterface">
+                    <section id="pop-up">
+                        <button id="btn-close">&#10005;</button>
+                        <p id="winner"></p>
+                    </section>
+                    <div id="playerInterface">
+                        <h2>You</h2>
+                        <div id="playerDiceWrapper">
+                            <div id="playerDiceHeading">
+                            <h3>Your Dice</h3>
+                            </div>
+                            <div id="playerDice">   
+                                <div id="playerDiceOne">
+                                    <p><b>Dice #1</b></p>
+                                        <img id="playerDiceOneImage" src="images/face1.png">
+                                </div>
+                                <div id="playerDiceTwo">
+                                    <p><b>Dice #2</b></p>
+                                    <img id="playerDiceTwoImage" src="images/face1.png" >
+
+                                </div>
+                            </div>
+                        </div> 
+                        <div id="playerScoreWrapper">
+                            <div id="playerScoreHeading">
+                            <h3>Your Score</h3>
+                            </div>
+                            <div id="playerScore">   
+                                <div id="playerCurrentRoundScore">
+                                    <p><b>This Round Score</b></p>
+                                    <p id="playerScoreValue">Score</p>
+                                </div>
+                                <div id="playerTotalScore">
+                                    <p><b>Total Score</b></p>
+                                    <p id="playerTotalScoreValue">Score</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div id="compInterface">
+                        <h2>Computer</h2>
+                        <div id="compDiceWrapper">
+                            <div id="compDiceHeading">
+                                <h3>Opponent Dice</h3>
+                            </div>
+                            <div id="compDice">   
+                                <div id="compDiceOne">
+                                    <p><b>Dice #1</b></p>
+                                    <img id="compDiceOneImage" src="images/face1.png">
+                                </div>
+                                <div id="compDiceTwo">
+                                    <p><b>Dice #2</b></p>
+                                    <img id="compDiceTwoImage" src="images/face1.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="compScoreWrapper">
+                            <div id="compScoreHeading">
+                            <h3>Opponent Score</h3>
+                            </div>
+                            <div id="compScore">   
+                                <div id="compCurrentRoundScore">
+                                    <p><b>This Round Score</b></p>
+                                    <p id="compScoreValue">Score</p>
+                                </div>
+                                <div id="compTotalScore">
+                                    <p><b>Total Score</b></p>
+                                    <p id="compTotalScoreValue">Score</p>
+                                </div>
+                            </div>
+                        </div>      
+                    </div>
+                </div>
+                <div id="buttons">
+                    <button id="newGame">New Game</button>
+                    <button id="rollDice">Roll Dice</button>
+                </div>
+            </div>
+        </main>     
+        <footer>
+            Dice Game - Maha Rehal
+        </footer>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
