@@ -32,15 +32,16 @@
             </div>       
             <div id="gameBackground">
                 <div id="gameInterface">
+                    <p id="playerName"></p>
                     <section id="pop-up">
                         <button id="btn-close">&#10005;</button>
                         <p id="winner"></p>
                     </section>
                     <div id="playerInterface">
-                        <h2>You</h2>
+                        <h2><span id="player">You</span></h2>
                         <div id="playerDiceWrapper">
                             <div id="playerDiceHeading">
-                            <h3>Your Dice</h3>
+                            <h3><span id="p1.1">You</span>'s Dice</h3>
                             </div>
                             <div id="playerDice">   
                                 <div id="playerDiceOne">
@@ -56,7 +57,7 @@
                         </div> 
                         <div id="playerScoreWrapper">
                             <div id="playerScoreHeading">
-                            <h3>Your Score</h3>
+                            <h3><span id="p1.2">You</span>'s Score</h3>
                             </div>
                             <div id="playerScore">   
                                 <div id="playerCurrentRoundScore">
@@ -110,9 +111,6 @@
                 </div>
             </div>
         </main>     
-        <footer>
-            Dice Game - Maha Rehal
-        </footer>
     </div>
 
     <script src="scripts/script.js"></script>

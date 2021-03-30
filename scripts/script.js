@@ -5,9 +5,9 @@ const popUp = document.getElementById("pop-up");
 const btnClose = document.getElementById("btn-close");
 const winner = document.getElementById("winner");
 const rules = document.getElementById("rules");
-
-//////////////////////////// NEEEEEEEEEEEEEED TO DO VIEWPORT ////////////////////////////////////
-
+const player = document.getElementById("player");
+const playerDiceHeading = document.getElementById("p1.1");
+const playerScoreHeading = document.getElementById("p1.2");
 
 /* ------------ VARIABLES ------------ */
 // Player dice 1 and 2 element
@@ -51,8 +51,6 @@ let delay = 200;
 
 
 /* ------------ SCRIPT ------------ */
-
-
 // Event listener based on the click
 rollBtn.addEventListener('click', diceRoll); 
 
@@ -136,8 +134,8 @@ function diceRoll() {
                 // set popup to fade in
                 popUp.classList.toggle('fade');
                 winner.innerHTML = `<h3><b>GAME OVER!!!</b></h3>`;
-                winner.innerHTML += `<b>Player Wins</b> <br>`;
-                winner.innerHTML += `<br> Score: <br> Player = ${playerSum} points <br> Computer = ${compSum} points`;
+                winner.innerHTML += `<b>${person} Wins</b> <br>`;
+                winner.innerHTML += `<br> Score: <br> ${person} = ${playerSum} points <br> Computer = ${compSum} points`;
         }, delay);
         } else if (compSum > playerSum) {
             popUpIntervalHandler = setTimeout(function(){
@@ -145,7 +143,7 @@ function diceRoll() {
                 popUp.classList.toggle('fade');
                 winner.innerHTML = `<h3><b>GAME OVER!!!</b></h3>`;
                 winner.innerHTML += `<b>Computer Wins</b> <br>`;
-                winner.innerHTML += `<br> Score: <br> Computer = ${compSum} points <br> Player = ${playerSum} points`;
+                winner.innerHTML += `<br> Score: <br> Computer = ${compSum} points <br> ${person} = ${playerSum} points`;
         }, delay);
         } else {
             popUpIntervalHandler = setTimeout(function(){
@@ -153,14 +151,12 @@ function diceRoll() {
                 popUp.classList.toggle('fade');
                 winner.innerHTML = `<h3><b>GAME OVER!!!</b></h3>`;
                 winner.innerHTML += `<b>It's a tie</b> <br>`;
-                winner.innerHTML += `<br> Score: <br> Player = ${playerSum} points <br> Computer = ${compSum} points`;
+                winner.innerHTML += `<br> Score: <br> ${person} = ${playerSum} points <br> Computer = ${compSum} points`;
         }, delay);
         }
     }   
 };
  
-
-
 // Function to add array values
 function arrayAdd(total, num){
         return total + num;
@@ -190,6 +186,28 @@ function hideAndSeek() {
         data.style.display = "none";
     }
 }
+
+// get player name, default is pikachu
+let person = prompt("Please Enter your name:", "Pikachu");
+
+// Player object
+class Player{
+    // Use user name entered
+    constructor(name){
+        this.name = name;
+    }
+    // Change innerhtml naming to user's entered name
+    describeSelf(){
+        let naming = player.innerHTML = person;
+        naming += playerDiceHeading.innerHTML = person;
+        naming += playerScoreHeading.innerHTML = person;
+        return naming;
+    }
+}
+
+// Instantiate the player object
+const newPlayer = new Player(person);
+newPlayer.describeSelf();
 
 
 
